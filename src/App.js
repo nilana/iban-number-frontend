@@ -3,6 +3,7 @@ import './App.css';
 import Home from './components/Home';
 import Register from './components/Register';
 import Login from './components/Login';
+import Iban from './components/Iban';
 
 function App() {
 
@@ -21,6 +22,10 @@ function App() {
             <Route
                 path="/login"
                 element={ <Login /> }
+            />
+            <Route
+                path="/iban"
+                element={ <Iban /> }
             />
         </Routes>
       </BrowserRouter>

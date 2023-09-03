@@ -22,9 +22,13 @@ function Register() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const registerEndpoint = process.env.REACT_APP_BASE_API+'/register';
+      const registerEndpoint = process.env.REACT_APP_BASE_API+'/register';
 
-      const response = await axios.post(registerEndpoint, formData);
+      const response = await axios.post(registerEndpoint, formData, {
+        headers: {
+            'Content-Type': 'application/json',
+        }
+      });
       
       if(response.data.success === false){
             setErrorMessage(response.data.message);
