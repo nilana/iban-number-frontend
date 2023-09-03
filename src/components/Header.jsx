@@ -6,6 +6,7 @@ function Header() {
     sessionStorage.removeItem('isUserLogged');
     sessionStorage.removeItem('token');
     sessionStorage.removeItem('username');
+    sessionStorage.removeItem('isAdmin');
   }
 
   return (
@@ -16,7 +17,7 @@ function Header() {
         <ul className="flex space-x-4">
           <li className="text-white hover:text-gray-200">Welcome {sessionStorage.getItem("username")} </li>
           <li className="text-white hover:text-gray-200">|</li>
-          <li className="text-white hover:text-gray-200"><Link to="/" onClick={clearSession}> Logout </Link></li>
+          <li className="text-white hover:text-gray-200"><Link to="/login" onClick={clearSession}> Logout </Link></li>
         </ul> :
         <ul className="flex space-x-4">
           

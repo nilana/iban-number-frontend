@@ -46,12 +46,16 @@ function Login() {
             }
             });
         //console.log(response.data.name);
+        const isAdmin = response.data.is_admin;
         sessionStorage.setItem("isUserLogged", true);
         sessionStorage.setItem("token", token);
         sessionStorage.setItem("username", response.data.name);
         sessionStorage.setItem("isAdmin", response.data.is_admin);
-        
-        navigate('/iban')
+        if(isAdmin){
+          navigate('/iban-list');
+        }else{
+          navigate('/iban');
+        }
 
     }
   };

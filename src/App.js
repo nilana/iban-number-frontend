@@ -4,6 +4,7 @@ import Home from './components/Home';
 import Register from './components/Register';
 import Login from './components/Login';
 import Iban from './components/Iban';
+import IbanList from './components/IbanList';
 
 function App() {
 
@@ -26,6 +27,10 @@ function App() {
             <Route
                 path="/iban"
                 element={ <Iban /> }
+            />
+            <Route
+                path="/iban-list"
+                element={ <IbanList /> }
             />
         </Routes>
       </BrowserRouter>
